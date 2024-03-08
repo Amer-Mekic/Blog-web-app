@@ -7,7 +7,8 @@
         <div class="col-9 container my-2 mx-2">
             <h3 class="mb-0"> <%= blog.title %> </h3>
             <div class="mb-1 text-body-secondary"> <%= blog.month %> <%= blog.day %> </div>
-            <p class="card-text mb-auto"> <%= blog.blogText.slice(0,194) %> ...</p>
+            <% var shortContent = blog.blogText %>
+            <p class="card-text mb-auto"> <%= shortContent %> ...</p>
             <a href="viewBlog/<%= blog.title %>" class="icon-link gap-1 icon-link-hover">
                 Continue reading
                 <svg class="bi"><use xlink:href="#chevron-right"></use></svg>
@@ -15,7 +16,9 @@
         </div>
         <div class="col-2 container my-3">
             <div class="row">
-                <a href="#" class="btn btn-outline-secondary mb-3" data-bs-toggle="button">Update</a>
+                <form action="/update/<%=blogs.indexOf(blog)%>" method="GET">
+                    <button type="submit" class="btn btn-outline-secondary mb-3">Update</button>
+                </form>
             </div>
             <div class="row">
                 <form action="/deleteitems/<%=blogs.indexOf(blog)%>" method="POST">
