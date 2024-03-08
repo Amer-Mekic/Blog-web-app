@@ -1,0 +1,16 @@
+<%- include("partials/header.ejs"); %>
+<div class="container">
+    <div class="container w-75 text-left mt-2">
+        <div class="bg-light border border-primary my-1">
+            <form action="/blogpost" method="POST" class="m-3">
+                <h3 class="mb-3">Create a <span style="color:orangered">New Blog</span></h3>
+                <label for="blogTitle" class="form-label pt-2">Blog Title <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" name="blogTitle" placeholder="Blog Title" required>
+                <label for="blogContent" class="form-label pt-2">Blog Content <span class="text-danger">*</span></label>
+                <textarea class="form-control" name="blogContent" rows="9" placeholder="Write your blog content here" required></textarea>
+                <button type="submit" class="btn btn-primary mt-3">Submit</button>
+            </form>           
+        </div>
+    </div>
+</div>
+<%- include("partials/footer.ejs"); %>
